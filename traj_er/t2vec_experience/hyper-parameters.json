@@ -1,0 +1,254 @@
+{
+  "region_porto": {
+    "cityname": "porto2",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/Porto/porto2_train.h5",
+    "testpath": "/home/zhuzheng/data/Porto/porto2_test.h5"
+  },
+  "region_geolife": {
+    "cityname": "geolife4",
+    "minlon": 116.2098,
+    "maxlon": 116.8138,
+    "minlat": 39.7422,
+    "maxlat": 40.0906,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/lizepeng/new_data_24h/t2vec/geolife/24.0h/train.h5",
+    "testpath": "/home/lizepeng/new_data_24h/t2vec/geolife/24.0h/test.h5"
+  },
+  "region_geolife_len24.0": {
+    "cityname": "geolife_pair24.0",
+    "minlon": 116.2098,
+    "maxlon": 116.8138,
+    "minlat": 39.7422,
+    "maxlat": 40.0906,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/lizepeng/new_data_24h/t2vec/geolife/24.0h/train.h5",
+    "testpath": "/home/lizepeng/new_data_24h/t2vec/geolife/24.0h/test.h5",
+    "train_num": 7018,
+    "vocab_size": 11180
+  },
+  "region_singapore": {
+    "cityname": "singapore_taxi3",
+    "minlon": 103.5997,
+    "minlat": 1.2077,
+    "maxlon": 104.0907,
+    "maxlat": 1.4809,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/SingaporeTaxi/singaporetaxi1_train.h5",
+    "testpath": "/home/zhuzheng/data/SingaporeTaxi/singaporetaxi1_test.h5"
+  },
+  "region_singapore_len24.0": {
+    "cityname": "singapore_pair24.0",
+    "minlon": 103.5997,
+    "minlat": 1.2077,
+    "maxlon": 104.0907,
+    "maxlat": 1.4809,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/lizepeng/new_data_24h/t2vec/singapore3w/24.0h/train.h5",
+    "testpath": "/home/lizepeng/new_data_24h/t2vec/singapore3w/24.0h/test.h5",
+    "train_num": 11713,
+    "vocab_size": 9132
+  },
+  "region_gowalla_len24.0": {
+    "cityname": "gowalla_pair24.0",
+    "minlon": -159.4663,
+    "minlat": -63.3209,
+    "maxlon": 167.7417,
+    "maxlat": 69.0597,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/lizepeng/new_data_24h/t2vec/gowalla/24.0h/train.h5",
+    "testpath": "/home/lizepeng/new_data_24h/t2vec/gowalla/24.0h/test.h5",
+    "train_num": 8439,
+    "vocab_size": 329828
+  },
+
+  "region_singapore_small": {
+    "cityname": "singapore_taxi1_small",
+    "minlon": 103.5997,
+    "minlat": 1.2077,
+    "maxlon": 104.0907,
+    "maxlat": 1.4809,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/SingaporeTaxi/singaporetaxi2_small_train.h5",
+    "testpath": "/home/zhuzheng/data/SingaporeTaxi/singaporetaxi2_small_test.h5"
+  },
+
+  "region_porto_small": {
+    "cityname": "porto2_small",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/Porto/porto2_small_train.h5",
+    "testpath": "/home/zhuzheng/data/Porto/porto2_small_test.h5"
+  },
+
+  "region_porto_top100": {
+    "cityname": "porto2_top100",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/Porto/porto2top100_train.h5",
+    "testpath": "/home/zhuzheng/data/Porto/porto2top100_test.h5",
+    "trainfeature": "/data3/zhuzheng/trajecotry/feature/porto2_top100_train.npy",
+    "testfeature": "/data3/zhuzheng/trajecotry/feature/porto2_top100_test.npy",
+    "trainlabel": "/data3/zhuzheng/trajecotry/feature/porto2_top100_trainlabel.npy",
+    "testlabel": "/data3/zhuzheng/trajecotry/feature/porto2_top100_testlabel.npy"
+  },
+
+  "region_geolife_top100": {
+    "cityname": "geolife_top100",
+    "minlon": 116.2098,
+    "maxlon": 116.8138,
+    "minlat": 39.7422,
+    "maxlat": 40.0906,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/Geolife/geolife1top100_train.h5",
+    "testpath": "/home/zhuzheng/data/Geolife/geolife1top100_test.h5",
+    "trainlabel": "/data3/zhuzheng/trajecotry/feature/geolife_top100_trainlabel.npy",
+    "testlabel": "/data3/zhuzheng/trajecotry/feature/geolife_top100_testlabel.npy",
+    "trainfeature": "/data3/zhuzheng/trajecotry/feature/geolife_top100_train.npy",
+    "testfeature": "/data3/zhuzheng/trajecotry/feature/geolife_top100_test.npy"
+  },
+
+  "region_singaporetaxi_top100": {
+    "cityname": "singaporetaxi2_top100",
+    "minlon": 103.5997,
+    "minlat": 1.2077,
+    "maxlon": 104.0907,
+    "maxlat": 1.4809,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/home/zhuzheng/data/SingaporeTaxi/singaporetaxi2top100_train.h5",
+    "testpath": "/home/zhuzheng/data/SingaporeTaxi/singaporetaxi2top100_test.h5"
+  },
+
+  "region_porto_pairexp": {
+    "cityname": "porto_pairexp",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajecotry/traj_pair/t2vec/porto/train.h5",
+    "testpath": "/data3/zhuzheng/trajecotry/traj_pair/t2vec/porto/test.h5"
+  },
+
+  "region_geolife_pairexp": {
+    "cityname": "geolife_pairexp",
+    "minlon": 115.1,
+    "minlat": 39.1,
+    "maxlon": 117.7,
+    "maxlat": 41.3,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajecotry/traj_pair/t2vec/geolife/train.h5",
+    "testpath": "/data3/zhuzheng/trajecotry/traj_pair/t2vec/geolife/test.h5"
+  },
+
+  "region_porto_multi-traj": {
+    "cityname": "porto_multi-traj",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajecotry/t2vec/multi_classify_exp/porto/train.h5",
+    "testpath": "/data3/zhuzheng/trajecotry/t2vec/multi_classify_exp/porto/test.h5"
+  },
+
+  "region_porto_len1": {
+    "cityname": "porto_len1",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/1.0h/train.h5",
+    "testpath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/1.0h/test.h5",
+    "voc_size": 4280
+  },
+  "region_porto_len2": {
+    "cityname": "porto_len2",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/2.0h/train.h5",
+    "testpath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/2.0h/test.h5",
+    "voc_size": 4918
+  },
+  "region_porto_len3": {
+    "cityname": "porto_len3",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/3.0h/train.h5",
+    "testpath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/3.0h/test.h5",
+    "voc_size": 5436
+  },
+
+  "region_porto_len0.3": {
+    "cityname": "porto_len0.3",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/0.3h/train.h5",
+    "testpath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/0.3h/test.h5",
+    "voc_size": 3147
+  },
+
+  "region_porto_len0.5": {
+    "cityname": "porto_len0.5",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/0.5h/train.h5",
+    "testpath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/0.5h/test.h5",
+    "voc_size": 3595
+  },
+
+  "region_porto_len0.8": {
+    "cityname": "porto_len0.8",
+    "minlon": -8.735152,
+    "minlat": 40.953673,
+    "maxlon": -8.156309,
+    "maxlat": 41.307945,
+    "cellsize": 100.0,
+    "minfreq": 100,
+    "filepath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/0.8h/train.h5",
+    "testpath": "/data3/zhuzheng/trajectory/t2vec/traj_pair/porto/0.8h/test.h5",
+    "voc_size": 3953
+  }
+}

@@ -1,0 +1,90 @@
+
+using JSON
+using DataStructures
+using NearestNeighbors
+using Serialization
+include("SpatialRegionTools.jl")
+
+param  = JSON.parsefile("../hyper-parameters.json")
+regionps = param[ARGS[2]]
+cityname = regionps["cityname"]
+cellsize = parse(Float64, ARGS[1])
+file_path = regionps["filepath"]
+if !isfile(file_path)
+    println("Please provide the correct hdf5 file $file_path")
+    exit(1)
+end
+
+region = SpatialRegion(cityname,
+                       regionps["minlon"], regionps["minlat"],
+                       regionps["maxlon"], regionps["maxlat"],
+                       cellsize, cellsize,
+                       regionps["minfreq"], # minfreq
+                       40_000, # maxvocab_size
+                       10, # k
+                       4) # vocab_start
+
+
+println("Building spatial region with:
+        cityname=$(region.name),
+        minlon=$(region.minlon),
+        minlat=$(region.minlat),
+        maxlon=$(region.maxlon),
+        maxlat=$(region.maxlat),
+        xstep=$(region.xstep),
+        ystep=$(region.ystep),
+        minfreq=$(region.minfreq)")
+
+paramfile = "../data/$(region.name)-param-cell$(Int(cellsize))"
+if isfile(paramfile)
+    println("Reading parameter file from $paramfile")
+    #loadregion!(region, paramfile)
+    region = deserialize(open(paramfile, "r"))
+else
+    println("Creating paramter file $paramfile")
+    num_out_region = makeVocab!(region, file_path)
+    #saveregion(region, paramfile)
+    serialize(open(paramfile, "w"), region)
+end
+
+#println("Making Vocabulary...")
+#num_out_region = makeVocab!(region, "../data/$cityname.h5")
+
+println("Vocabulary size $(region.vocab_size) with cell size $cellsize (meters)")
+# createTrainVal(region, file_path, downsamplingDistort, 1_000_000, 10_000)
+createTrainVal(region, file_path, downsamplingDistort, parse(Int, ARGS[3]), parse(Int, ARGS[4]), max_length=1000)
+saveKNearestVocabs(region)
+
+#region.cellcount |> keys |> maximum
+#region.cellcount |> keys |> minimum
+#region.cellcount |> length
+#region.cellcount |> values |> sum
+#region.cellcount |> values |> minimum
+#region.cellcount |> values |> maximum
+#region.vocab2hotcell[1638]
+#region.vocab2hotcell |> keys |> maximum
+#region.vocab_size
+## test cell2gps(), gps2cell()
+#for cell in 1:region.numx*region.numy-1
+#    gps = cell2gps(region, cell)
+#    @assert cell == gps2cell(region, gps...) "cell $cell bad"
+#end
+
+#cell = region.hotcell[10]
+#kcells, dists = knearestHotcells(region, cell, 10)
+#kvocabs = map(x->region.hotcell2vocab[x], kcells)
+#[(v,d) for (v, d) in zip(kvocabs, dists)]
+
+#saveKNearestVocabs(region)
+#V, D = h5open("$cityname-vocab-dist.h5", "r") do f
+#           f["V"]|>read, f["D"]|>read
+#end
+
+#seq = " 793 14350  8606 23750 13308" |> split |> x->map(parse, x)
+#seq = [region.hotcell2vocab[c] for c in region.hotcell]
+#trip = seq2trip(region, seq)
+#h5open("/tmp/trip.h5", "w") do f f["trip"] = trip end
+
+#a = sort(collect(region.cellcount), by=last, rev=true)[1:40000]
+#region.hotcell
+#a[end] |> last

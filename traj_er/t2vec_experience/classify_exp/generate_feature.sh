@@ -1,0 +1,2 @@
+nohup python tested_feature_extractor.py -region_name region_geolife_top100 > geolife_extract_feature.out 2>&1 &
+nohup python tested_feature_extractor.py -region_name region_singaporetaxi_top100 > siga_extracct_feature.out 2>&1 & 

@@ -1,0 +1,22 @@
+{
+    "region_porto_top100":
+    {
+        "driving_time": 2000.0,
+        "driving_distance": 15000.0,
+        "speed": 35.0
+    },
+
+    "region_geolife_top100":
+    {
+        "driving_time": 5800,
+        "driving_distance": 24000,
+        "speed": 35.0
+    },
+
+    "region_singaporetaxi_top100":
+    {
+        "driving_time": 21000,
+        "driving_distance": 130000,
+        "speed": 35.0
+    }
+}

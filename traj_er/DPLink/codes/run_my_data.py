@@ -31,7 +31,7 @@ class CustomSettings(object):
             "singapore" : {24.0: 13613}
         }
 
-        self.data_path = os.path.join(os.getcwd().strip('DPLink/codes') + 'dataset/dplink_dataset' + data + '_mcan')
+        self.data_path = os.path.join(os.getcwd().strip('DPLink/codes') + 'dataset/dplink_dataset' + data)
         self.save_path = os.path.join(os.getcwd() + '/save', data, 'output')
         self.data_name = data
         self.epoch = epoch

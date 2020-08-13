@@ -272,15 +272,3 @@ Open source code and Dataset generation
 + [MIT License](https://github.com/qyxxjd/License)
 
 
-
-
-
-
-
-
-
-
-
-
-
-Edit By [MaHua](http://mahua.jser.me)

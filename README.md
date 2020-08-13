@@ -1,11 +1,12 @@
 # DERT
 
-###Multi-Context Attention Network for Diversity of Entity Resolution Tasks
+### Multi-Context Attention Network for Diversity of Entity Resolution Tasks
 
 ***
 ## Background
 The code is the open source code of the MCAN model proposed to solve multiple entity analysis tasks, the comparison algorithm code and the data set required for testing. The data set needs to be obtained through the following methods for some reasons.
 ***
+
 ## Install
 Code operating environment
 
@@ -44,8 +45,8 @@ The Video-ER data is in the form of pair, and the data sets for train, valid, an
 ### Traj-ER
 
 #### source_data
-+ #####[Geolife](https://www.microsoft.com/en-us/download/details.aspx?id=52367)
-+ #####[Singapore](https://www.microsoft.com/en-us/download/details.aspx?id=52367)
++ ##### [Geolife](https://www.microsoft.com/en-us/download/details.aspx?id=52367)
++ ##### [Singapore](https://www.microsoft.com/en-us/download/details.aspx?id=52367)
 
 #### Processed data
 After filtering the source data for dirty data and removing too short data, the data is used to generate train test data used by all comparison algorithms of the Traj-ER task.
@@ -69,8 +70,11 @@ Download the Foursquare and Gowalla MCAN algorithm and comparison algorithm data
 ## Code operation
 
 ### Text-ER
+
+Environment: python2 [./text_er/requirments.txt](https://github.com/lzzppp/DERT/tree/master/text_er)
+
 #### data preparation
-##### [Dataset](http://pages.cs.wisc.edu/~anhai/papers1/deepmatcher-sigmod18.pdf)
++ ##### [Dataset](http://pages.cs.wisc.edu/~anhai/papers1/deepmatcher-sigmod18.pdf)
 
 The data set is downloaded and stored in the ./text_er/dataset/ directory.
 Since our model uses the vector of the pre-trained fasttext model, we need to download the [wiki.en.bin](https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.zip) file in advance to the [./text_er/MCAN/dataset/](https://github.com/lzzppp/DERT/tree/master/text_er/MCAN/dataset) directory.
@@ -89,6 +93,8 @@ After downloading the data set and pre-training vector file, enter the virtual e
 The TYPE parameter indicates the form of the data set, including **[StructuralWithValue, Structural, Textual, Dirty, Dirty1, Dirty2]** and other forms. The DATASET parameter represents the name of the training data set, specifically the name of the data set folder, depending on the situation. The BATCH_SIZE parameter is the training batch, the default is 16, and it is recommended to remain unchanged. The EPOCH parameter is the number of training rounds, and the default is 10. The POS_NEG parameter indicates whether the model training considers the problem of the ratio of positive and negative samples. The ABLATION_PART parameter is the parameter required for ablation experiment. String input such as **SA, PA, GM, GA** can remove a part of the model for comparison experiment. The default is'none'.
 
 ### Video-ER
+
+Environment: python2 [./video_er/requirments.txt](https://github.com/lzzppp/DERT/tree/master/video_er)
 
 #### Convenient training
 After downloading the dataset Market1501 and Occluded-DukeMTMC of the Video-ER task, if you want to train all models including [MCAN, RGA-Net, RGA-Net-PA, ABD-Net], you can directly run `bash ./video_er/ run.sh` will directly perform the training process of all models on all data sets.
@@ -115,27 +121,31 @@ Experimenters can expand or change the training data set to explore new possibil
 
 #### MCAN
 
-Code path 10090 port server /home/zhuzheng/papercode/mcan/
+Code path: [./traj_er/MCAN](https://github.com/lzzppp/DERT/tree/master/traj_er/MCAN)
 
-The data path on the server is: /mnt/disk_data_hdd/zhuzheng/trajectory/mcan
+The data path on the server is: [./traj_er/dataset/mcan_dataset](https://github.com/lzzppp/DERT/tree/master/traj_er/dataset/mcan_dataset)
 
-/home/zhuzheng/papercode/mcan/dataset is the original corpus data, it is best not to move
+Environment: [./traj_er/MCAN/requirments.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/MCAN) (virtualenv)
 
-Environment: /home/nieyuyang/py3 (virtualenv)
-
-The program entry is main2.py, which itself is a code that handles entity resolution in nlp. Currently, it uses trajectory cell sequence input instead.
+The program entry is main.py, which itself is a code that handles entity resolution in nlp. Currently, it uses trajectory cell sequence input instead.
 
 #### main.py
 
 There are three parameters to note:
+```
+ python main.py
+-dataset: Dataset
+
+-length: LENGTH
+
+-ablation_part: ABLATION_PART
+```
 
 -dataset: the input data set
 
 -length: trajectory length, corresponding to the length of to_mcan_format.py in data preprocessing
 
--ablation_part: The structure of each attention (SA PA GM GA) is detailed in the paper
-
-
+-ablation_part: The structure of each attention **(SA PA GM GA)** is detailed in the paper
 
 In addition, because this code is directly modified from the nlp code, a large amount of the data preprocessing part of the code is the original nlp code, which is more complicated. It is recommended to modify the model part first, and then modify and integrate the preprocessing part before open source. This nlp code will involve loading pre-trained embedding (larger), this part of which I did not change in order to run quickly, so it is best to keep the dataset folder unchanged when running.
 
@@ -270,5 +280,3 @@ Open source code and Dataset generation
 ***
 ## License
 + [MIT License](https://github.com/qyxxjd/License)
-
-

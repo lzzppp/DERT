@@ -28,7 +28,7 @@ train, validation, test = dm.data.process(
     train='train.csv',
     validation='valid.csv',
     test='test.csv',
-    embeddings_cache_path=os.getcwd().strip('MCAN') + 'dataset/mcan_dataset',
+    embeddings_cache_path=os.getcwd() + '/dataset',
     ignore_columns=['ltable_id', 'rtable_id']
 )
 

@@ -96,7 +96,9 @@ def main():
     parser.add_argument ('--shallow-cam', action='store_true')
     parser.add_argument ('--dropout', type=float, default=0.5)
     parser.add_argument ('--global-max-pooling', action='store_true')
+    parser.add_argument ('--Warm-up-epoch', default=5, help="Warm-up-epochs")
     parser.add_argument ('--epoch', default=40, help="epochs")
+    parser.add_argument ('--pos_neg', default=True, help="POS_NEG")
     parser.add_argument('--dataset', help="dataset", choices=['market1501', 'occluded_dukeMTMC'])
     args = parser.parse_args()
     best_save_path = "model_params_" + args.dataset + '_' + args.model_type + '.pth'
@@ -107,19 +109,22 @@ def main():
         path = os.getcwd().strip('video_er_model') + 'occluded_dukeMTMC/'
     train_dataloader, test_dataloader, valid_dataloader, train_dataset, test_dataset = data_processer(path)
     
-    test_labels = list(test_dataset.labels)
-    pos_neg_ratio = int((len (test_labels) - sum (test_labels)) / sum (test_labels))
-    pos_neg_ratio = max(1, pos_neg_ratio) + 1 # If 0.25 is used as 0.2, please remove plus one
-    print ("[Info] pos_neg_ratio: ", pos_neg_ratio)
+    if args.pos_neg:    
+        test_labels = list(test_dataset.labels)
+        pos_neg_ratio = int((len (test_labels) - sum (test_labels)) / sum (test_labels))
+        pos_neg_ratio = max(1, pos_neg_ratio) + 1 # If 0.25 is used as 0.2, please remove plus one
+        print ("[Info] pos_neg_ratio: ", pos_neg_ratio)
     
-    pos_weight = 2 * pos_neg_ratio / (1 + pos_neg_ratio)
-    neg_weight = 2 - pos_weight
+        pos_weight = 2 * pos_neg_ratio / (1 + pos_neg_ratio)
+        neg_weight = 2 - pos_weight
     
     model = set_model(args)
     model.init_models (train_dataset)
     optimizer = Adam (filter (lambda p: p.requires_grad, model.parameters ()), lr=0.001)
-    criterion = nn.NLLLoss (weight=torch.Tensor ([neg_weight, pos_weight])).cuda ()
-    
+    if args.pos_neg:
+        criterion = nn.NLLLoss(weight=torch.Tensor ([neg_weight, pos_weight])).cuda ()
+    else:
+        criterion = nn.NLLLoss().cuda ()
     model = model.cuda ()
     
     best_score = 0.0

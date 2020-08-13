@@ -4,14 +4,14 @@ import argparse
 import mcan as dm
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-dataset', required=True, type=str)
-parser.add_argument('-type', required=True, choices=('StructuralWithValue', 'Structural',
+parser.add_argument('--dataset', required=True, type=str)
+parser.add_argument('--type', required=True, choices=('StructuralWithValue', 'Structural',
                                                      'Textual', 'Dirty', 'Dirty1', 'Dirty2'))
-parser.add_argument('-batch_size', default=16, type=int)
-parser.add_argument('-epoch', default=23, type=int)
-parser.add_argument('-pos_neg', action='store_true')
-parser.add_argument('-ablation_part', default='none', type=str)
-parser.add_argument('-length', type=float)
+parser.add_argument('--batch_size', default=16, type=int)
+parser.add_argument('--epoch', default=23, type=int)
+parser.add_argument('--pos_neg', action='store_true')
+parser.add_argument('--ablation_part', default='none', type=str)
+parser.add_argument('--length', type=float)
 opt = parser.parse_args()
 
 dataset = opt.dataset

@@ -1,6 +1,5 @@
 import os
 import argparse
-# import deepmatcher as dm
 import mcan as dm
 
 parser = argparse.ArgumentParser()
@@ -36,7 +35,7 @@ pos_neg_ratio = None
 if is_pos_neg:
     test_labels = list(test.label)
     pos_neg_ratio = int((len(test_labels) - sum(test_labels)) / sum(test_labels))
-    pos_neg_ratio = max(1, pos_neg_ratio) # Since the ratio of positive and negative data samples cannot be exactly equal to 0.25, 1 can be added flexibly here.
+    pos_neg_ratio = max(1, pos_neg_ratio) # Since the positive sample ratio of the data cannot be exactly equal to 0.25, 1 can be added flexibly here.
     print("[Info] pos_neg_ratio: ", pos_neg_ratio)
 
 model = dm.MCANModel()

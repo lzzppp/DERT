@@ -184,7 +184,6 @@ class Runner(object):
     def train(model,
               train_dataset,
               validation_dataset,
-              test_dataset,
               best_save_path,
               epochs=10,
               criterion=None,
@@ -231,8 +230,8 @@ class Runner(object):
             Runner._run(
                 'TRAIN', model, train_dataset, criterion, optimizer, train=True, **kwargs)
 
-            # score = Runner._run('EVAL', model, validation_dataset, train=False, **kwargs)
-            score = Runner._run('TEST', model, test_dataset, **kwargs)
+            score = Runner._run('EVAL', model, validation_dataset, train=False, **kwargs)
+#             score = Runner._run('TEST', model, test_dataset, **kwargs)
             
             optimizer.update_learning_rate(score, epoch + 1)
             model.optimizer_state = optimizer.base_optimizer.state_dict()

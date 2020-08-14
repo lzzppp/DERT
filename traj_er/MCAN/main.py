@@ -44,7 +44,6 @@ model = dm.MCANModel()
 model.run_train(
     train,
     validation,
-    test,
     epochs=epoch,
     batch_size=batch_size,
     best_save_path='mcan_model_%s.pth'%opt.dataset,

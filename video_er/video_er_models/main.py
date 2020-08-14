@@ -112,7 +112,7 @@ def main():
     if args.pos_neg:    
         test_labels = list(test_dataset.labels)
         pos_neg_ratio = int((len (test_labels) - sum (test_labels)) / sum (test_labels))
-        pos_neg_ratio = max(1, pos_neg_ratio) + 1 # If 0.25 is used as 0.2, please remove plus one
+        pos_neg_ratio = max(1, pos_neg_ratio) + 1 # Since the positive sample ratio of the data cannot be exactly equal to 0.25, 1 can be added flexibly here.
         print ("[Info] pos_neg_ratio: ", pos_neg_ratio)
     
         pos_weight = 2 * pos_neg_ratio / (1 + pos_neg_ratio)

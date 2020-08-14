@@ -31,7 +31,7 @@ tfconfig = tf.ConfigProto()
 tfconfig.gpu_options.allow_growth = True
 #paramters
 bigger = 1  # 调参数设置更大
-batch_size=16  # Running one is set 12, which is why so slow
+batch_size=32  # Running one is set 12, which is why so slow
 iter_num=20  #iter_number
 n_input=300  #embedding size
 n_hidden=int(300 * bigger) #vae embeddings

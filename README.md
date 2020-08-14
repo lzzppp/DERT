@@ -71,7 +71,7 @@ Download the Foursquare and Gowalla MCAN algorithm and comparison algorithm data
 
 ### Text-ER
 
-Environment: python2 [./text_er/requirments.txt](https://github.com/lzzppp/DERT/tree/master/text_er)
+Environment: python3 [./text_er/requirments.txt](https://github.com/lzzppp/DERT/tree/master/text_er)
 
 #### data preparation
 + ##### [Dataset](http://pages.cs.wisc.edu/~anhai/papers1/deepmatcher-sigmod18.pdf)
@@ -94,7 +94,7 @@ The TYPE parameter indicates the form of the data set, including **[StructuralWi
 
 ### Video-ER
 
-Environment: python2 [./video_er/requirments.txt](https://github.com/lzzppp/DERT/tree/master/video_er)
+Environment: python3 [./video_er/requirments.txt](https://github.com/lzzppp/DERT/tree/master/video_er)
 
 #### Convenient training
 After downloading the dataset Market1501 and Occluded-DukeMTMC of the Video-ER task, if you want to train all models including [MCAN, RGA-Net, RGA-Net-PA, ABD-Net], you can directly run `bash ./video_er/ run.sh` will directly perform the training process of all models on all data sets.
@@ -125,7 +125,7 @@ Code path: [./traj_er/MCAN](https://github.com/lzzppp/DERT/tree/master/traj_er/M
 
 The data path on the server is: [./traj_er/dataset/mcan_dataset](https://github.com/lzzppp/DERT/tree/master/traj_er/dataset/mcan_dataset)
 
-Environment: [./traj_er/MCAN/requirments.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/MCAN) (virtualenv)
+Environment: python3 [./traj_er/MCAN/requirments.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/MCAN) (virtualenv)
 
 The program entry is main.py, which itself is a code that handles entity resolution in nlp. Currently, it uses trajectory cell sequence input instead.
 
@@ -159,7 +159,7 @@ analysis/cell_vis.py is used to visualize the size of each cell attention value,
 
 #### DPLink
 
-Code path 10090 port server [./traj_er/DPLink/codes/](https://github.com/lzzppp/DERT/tree/master/traj_er/DPLink/codes)
+Code path: [./traj_er/DPLink/codes/](https://github.com/lzzppp/DERT/tree/master/traj_er/DPLink/codes)
 
 Environment: python2 [./traj_er/DPLink/requirments.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/DPLink)
 
@@ -184,7 +184,9 @@ Among them, cell_width is that I have tried different cell width divisions, and 
 
 #### T2vec
 
-Code path: [./traj_er/t2vec_experience/requirments.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/t2vec_experience)
+Code path: [./traj_er/t2vec_experience](https://github.com/lzzppp/DERT/tree/master/traj_er/t2vec_experience)
+
+Environment: python2 [./traj_er/t2vec_experience/requirments.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/t2vec_experience)
 
 The purpose of this comparison algorithm itself is to input a trajectory and output the embedding of this trajectory. The way we use it as the comparison algorithm is to splice the embeddings of each pair of trajectories and use a neural network to judge whether it comes from the same person.
 
@@ -253,7 +255,7 @@ The process of running the entire algorithm is cumbersome. I have written two ba
 
 Code: [./traj_er/TULVAE](https://github.com/lzzppp/DERT/tree/master/traj_er/TULVAE)
 
-Environment: [./traj_er/TULVAE/requirements.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/TULVAE)
+Environment: python2 [./traj_er/TULVAE/requirements.txt](https://github.com/lzzppp/DERT/tree/master/traj_er/TULVAE)
 
 The code of this person is rather confusing. This code originally categorizes the trajectory. In order to deal with our problem, the method of running is to join the two trajectory cell sequences and run as a 2-classification problem.
 

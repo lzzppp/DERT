@@ -104,9 +104,9 @@ def main():
     best_save_path = "model_params_" + args.dataset + '_' + args.model_type + '.pth'
     epochs = args.epoch
     if args.dataset == 'market1501':
-        path = os.getcwd().strip('video_er_model') + 'market1501/'
+        path = os.getcwd().strip('video_er_models') + 'market1501/'
     elif args.dataset == 'occluded_dukeMTMC':
-        path = os.getcwd().strip('video_er_model') + 'occluded_dukeMTMC/'
+        path = os.getcwd().strip('video_er_models') + 'occluded_dukeMTMC/'
     train_dataloader, test_dataloader, valid_dataloader, train_dataset, test_dataset = data_processer(path)
     
     if args.pos_neg:    

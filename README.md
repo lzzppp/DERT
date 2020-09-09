@@ -46,7 +46,7 @@ The Video-ER data is in the form of pair, and the data sets for train, valid, an
 
 #### source_data
 + ##### [Geolife](https://www.microsoft.com/en-us/download/details.aspx?id=52367)
-+ ##### [Singapore](https://www.microsoft.com/en-us/download/details.aspx?id=52367)
++ ##### [Singapore](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7676319)
 
 #### Processed data
 After filtering the source data for dirty data and removing too short data, the data is used to generate train test data used by all comparison algorithms of the Traj-ER task.

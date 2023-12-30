@@ -276,9 +276,32 @@ The Check-In-ER task comparison algorithm is similar to the Traj-ER task compari
  
  
 ***
-## contributing
+## Contributing
 Open source code and Dataset generation
 
 ***
 ## License
 + [MIT License](https://github.com/qyxxjd/License)
+
+## Cite this work
+If you would like to cite my work, please follow the format below.
+
+@article{DBLP:journals/tkde/ZhangLWTC22,
+  author       = {Dongxiang Zhang and
+                  Zepeng Li and
+                  Xiaoli Wang and
+                  Kian{-}Lee Tan and
+                  Gang Chen},
+  title        = {Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity
+                  of Entity Resolution Tasks},
+  journal      = {{IEEE} Trans. Knowl. Data Eng.},
+  volume       = {34},
+  number       = {12},
+  pages        = {6018--6032},
+  year         = {2022},
+  url          = {https://doi.org/10.1109/TKDE.2021.3060790},
+  doi          = {10.1109/TKDE.2021.3060790},
+  timestamp    = {Mon, 05 Dec 2022 13:33:51 +0100},
+  biburl       = {https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}

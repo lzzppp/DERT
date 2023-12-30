@@ -286,6 +286,7 @@ Open source code and Dataset generation
 ## Cite this work
 If you would like to cite my work, please follow the format below.
 
+```
 @article{DBLP:journals/tkde/ZhangLWTC22,
   author       = {Dongxiang Zhang and
                   Zepeng Li and
@@ -305,3 +306,4 @@ If you would like to cite my work, please follow the format below.
   biburl       = {https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib},
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
+```
